@@ -2,10 +2,10 @@
 import { getEntry } from 'astro:content';
 import { enUS } from 'date-fns/locale';
 
-import { GridList, HorizontalList, VerticalList } from '@/components/list';
+import { HorizontalList, VerticalList } from '@/components/list';
 import Separator from '@/components/separator.astro';
 import AccentColors from '@/styles/colors/accent/indigo.astro';
-import DuskColors from '@/styles/colors/dusk/slate.astro';
+import DuskColors from '@/styles/colors/dusk/gray.astro';
 import ElementColors from '@/styles/colors/elements/default.astro';
 import Font from '@/styles/fonts/inter.astro';
 import Achievement from '@/web/components/achievement.astro';
@@ -23,7 +23,7 @@ await initializeWebContext(Astro, {
   locale: enUS,
   translations: getEntry('translations', 'en'),
   dateFormat: 'MMMM yyyy',
-  theme: 'custom',
+  theme: 'system',
   pdf: {
     path: '/generated/pdf/index.pdf',
     label: 'Download resume',
@@ -44,8 +44,8 @@ await initializeWebContext(Astro, {
     <SidebarItem sectionId="basics" icon="fa6-solid:user">About me</SidebarItem>
     <SidebarItem sectionId="skills" icon="fa6-solid:bars-progress">Skills</SidebarItem>
     <SidebarItem sectionId="jobs" icon="fa6-solid:suitcase">Work experience</SidebarItem>
-    <SidebarItem sectionId="achievements" icon="fa6-solid:trophy">Achievements</SidebarItem>
     <SidebarItem sectionId="education" icon="fa6-solid:graduation-cap">Education</SidebarItem>
+    <SidebarItem sectionId="achievements" icon="fa6-solid:trophy">Achievements</SidebarItem>
   </Sidebar>
   <Basics entry={getEntry('basics', 'main')} id="basics" />
   <Section class="gap-8" id="skills">
@@ -53,18 +53,14 @@ await initializeWebContext(Astro, {
     <VerticalList class="gap-8">
       <Subsection class="gap-2">
         <SubsectionTitle>Technologies</SubsectionTitle>
-        <GridList class="gap-8" minColWidth="200px">
-          <Skill entry={getEntry('skills', 'typescript')} />
-          <Skill entry={getEntry('skills', 'javascript')} />
-          <Skill entry={getEntry('skills', 'go')} />
-          <Skill entry={getEntry('skills', 'kotlin')} />
-          <Skill entry={getEntry('skills', 'terraform')} />
+        <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'docker')} />
+          <Skill entry={getEntry('skills', 'dotnet')} />
+          <Skill entry={getEntry('skills', 'kotlin')} />
           <Skill entry={getEntry('skills', 'kubernetes')} />
-          <Skill entry={getEntry('skills', 'html')} />
-          <Skill entry={getEntry('skills', 'css')} />
-          <Skill entry={getEntry('skills', 'php')} />
-        </GridList>
+          <Skill entry={getEntry('skills', 'terraform')} />
+          <Skill entry={getEntry('skills', 'typescript')} />
+        </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
         <SubsectionTitle>Cloud & DevOps</SubsectionTitle>
@@ -72,9 +68,11 @@ await initializeWebContext(Astro, {
           <Skill entry={getEntry('skills', 'aws')} />
           <Skill entry={getEntry('skills', 'azure')} />
           <Skill entry={getEntry('skills', 'github-actions')} />
-          <Skill entry={getEntry('skills', 'gitlab')} />
+          <Skill entry={getEntry('skills', 'grafana')} />
+          <Skill entry={getEntry('skills', 'new-relic')} />
           <Skill entry={getEntry('skills', 'octopus-deploy')} />
-          <Skill entry={getEntry('skills', 'datadog')} />
+          <Skill entry={getEntry('skills', 'sumologic')} />
+          <Skill entry={getEntry('skills', 'teamcity')} />
         </HorizontalList>
       </Subsection>
     </VerticalList>
@@ -93,18 +91,18 @@ await initializeWebContext(Astro, {
       <Job entry={getEntry('jobs', 'racine')} />
     </VerticalList>
   </Section>
-  <Section class="gap-8" id="achievements">
-    <SectionTitle>Achievements</SectionTitle>
-    <VerticalList class="gap-8">
-      <Achievement entry={getEntry('achievements', 'azure-certified-fundamentals')} />
-    </VerticalList>
-  </Section>
   <Section class="gap-8" id="education">
     <SectionTitle>Education</SectionTitle>
     <VerticalList class="gap-10">
       <Education entry={getEntry('education', 'umd')} />
       <Separator />
       <Education entry={getEntry('education', 'dev-academy')} />
+    </VerticalList>
+  </Section>
+  <Section class="gap-8" id="achievements">
+    <SectionTitle>Achievements</SectionTitle>
+    <VerticalList class="gap-8">
+      <Achievement entry={getEntry('achievements', 'azure-certified-fundamentals')} />
     </VerticalList>
   </Section>
 </Layout>

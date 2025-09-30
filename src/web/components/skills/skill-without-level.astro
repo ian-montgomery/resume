@@ -17,9 +17,9 @@ const Description = body.trim().length > 0 && (await render()).Content;
 const iconStyle = skill.color ? { color: skill.color } : undefined;
 ---
 
-<div class="flex items-center gap-2 overflow-hidden rounded bg-color-bg-light pl-2">
+<div class="inline-flex items-center gap-2 overflow-hidden rounded bg-color-bg-light pl-2">
   {skill.icon && <Icon name={skill.icon} class="size-4" style={iconStyle} />}
-  <Linkable class={cn('py-1 text-sm font-medium text-color-text-primary', !Description && 'pr-2')} href={skill.url}>
+  <Linkable class={cn('py-1 font-skills text-sm font-medium text-color-text-primary', !Description && 'pr-2')} href={skill.url}>
     {skill.name}
   </Linkable>
   {

@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import { enUS } from 'date-fns/locale';
 
-import { HorizontalList, VerticalList } from '@/components/list';
+import { VerticalList } from '@/components/list';
 import Separator from '@/components/separator.astro';
 import Achievement from '@/pdf/components/achievement.astro';
 import Basics from '@/pdf/components/basics.astro';
@@ -10,10 +10,9 @@ import Education from '@/pdf/components/education.astro';
 import Footer from '@/pdf/components/footer.astro';
 import Job from '@/pdf/components/job.astro';
 import Layout from '@/pdf/components/layout.astro';
-import { Section, SectionTitle, Subsection, SubsectionTitle } from '@/pdf/components/section';
-import { Skill } from '@/pdf/components/skills';
+import { Section, SectionTitle } from '@/pdf/components/section';
 import { initializePdfContext } from '@/pdf/utils/initialize-pdf-context';
-import AccentColors from '@/styles/colors/accent/indigo.astro';
+import AccentColors from '@/styles/colors/accent/cyan.astro';
 import DuskColors from '@/styles/colors/dusk/slate.astro';
 import ElementColors from '@/styles/colors/elements/default.astro';
 import Font from '@/styles/fonts/inter.astro';
@@ -26,7 +25,7 @@ await initializePdfContext(Astro, {
 });
 ---
 
-<Layout class="gap-6">
+<Layout class="gap-4">
   <Fragment slot="head">
     <Font />
     <DuskColors />
@@ -34,37 +33,9 @@ await initializePdfContext(Astro, {
     <ElementColors />
   </Fragment>
   <Basics entry={getEntry('basics', 'main-pdf')} />
-  <Section class="gap-4">
-    <SectionTitle>Skills</SectionTitle>
-    <VerticalList class="gap-4">
-      <Subsection class="gap-2">
-        <SubsectionTitle>Technologies</SubsectionTitle>
-        <HorizontalList class="gap-3">
-          <Skill entry={getEntry('skills', 'typescript')} />
-          <Skill entry={getEntry('skills', 'javascript')} />
-          <Skill entry={getEntry('skills', 'go')} />
-          <Skill entry={getEntry('skills', 'kotlin')} />
-          <Skill entry={getEntry('skills', 'terraform')} />
-          <Skill entry={getEntry('skills', 'docker')} />
-          <Skill entry={getEntry('skills', 'kubernetes')} />
-        </HorizontalList>
-      </Subsection>
-      <Subsection class="gap-2">
-        <SubsectionTitle>Cloud & DevOps</SubsectionTitle>
-        <HorizontalList class="gap-3">
-          <Skill entry={getEntry('skills', 'aws')} />
-          <Skill entry={getEntry('skills', 'azure')} />
-          <Skill entry={getEntry('skills', 'github-actions')} />
-          <Skill entry={getEntry('skills', 'gitlab')} />
-          <Skill entry={getEntry('skills', 'octopus-deploy')} />
-          <Skill entry={getEntry('skills', 'datadog')} />
-        </HorizontalList>
-      </Subsection>
-    </VerticalList>
-  </Section>
-  <Section class="gap-4">
+  <Section class="gap-3">
     <SectionTitle>Work</SectionTitle>
-    <VerticalList class="gap-6">
+    <VerticalList class="gap-3">
       <Job entry={getEntry('jobs', 'xero')} />
       <Separator />
       <Job entry={getEntry('jobs', 'endgame')} />
@@ -76,15 +47,15 @@ await initializePdfContext(Astro, {
       <Job entry={getEntry('jobs', 'racine')} />
     </VerticalList>
   </Section>
-  <Section class="gap-4">
+  <Section class="gap-3">
     <SectionTitle>Achievements</SectionTitle>
-    <VerticalList class="gap-3">
+    <VerticalList class="gap-2">
       <Achievement entry={getEntry('achievements', 'azure-certified-fundamentals')} />
     </VerticalList>
   </Section>
-  <Section class="gap-4">
+  <Section class="gap-3">
     <SectionTitle>Education</SectionTitle>
-    <VerticalList class="gap-6">
+    <VerticalList class="gap-3">
       <Education entry={getEntry('education', 'umd')} />
       <Separator />
       <Education entry={getEntry('education', 'dev-academy')} />

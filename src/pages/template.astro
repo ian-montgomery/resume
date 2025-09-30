@@ -1,10 +1,10 @@
 ---
 import type { ComponentProps } from 'astro/types';
 
-import AccentColors from '@/styles/colors/accent/indigo.astro';
+import AccentColors from '@/styles/colors/accent/amber.astro';
 import DuskColors from '@/styles/colors/dusk/slate.astro';
 import ElementColors from '@/styles/colors/elements/default.astro';
-import Font from '@/styles/fonts/inter.astro';
+import Font from '@/styles/fonts/jetbrains-mono.astro';
 import MainTemplate from '@/web/templates/main-template.astro';
 
 const props: ComponentProps<typeof MainTemplate> = {
@@ -12,7 +12,7 @@ const props: ComponentProps<typeof MainTemplate> = {
     locale: 'enUS',
     translations: 'en',
     dateFormat: 'MMMM yyyy',
-    theme: 'custom',
+    theme: 'system',
     pdf: {
       path: '/generated/pdf/template.pdf',
       label: 'Download resume',

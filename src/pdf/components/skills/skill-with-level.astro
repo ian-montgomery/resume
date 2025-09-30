@@ -21,10 +21,10 @@ const iconStyle = skill.color ? { color: skill.color } : undefined;
 
 <div class="flex h-6 items-center overflow-hidden rounded border border-color-border pl-2">
   {skill.icon && <Icon name={skill.icon} class="mr-1.5 size-3" style={iconStyle} />}
-  <Linkable class={cn('text-sm font-medium text-color-text-primary')} href={skill.url}>
+  <Linkable class={cn('font-skills text-sm font-medium text-color-text-primary')} href={skill.url}>
     {skill.name}
   </Linkable>
-  <div class="ml-2 flex h-full items-center bg-color-bg-light px-2 text-xs font-bold text-color-text-primary">
+  <div class="ml-2 flex h-full items-center bg-color-bg-light px-2 font-skills text-xs font-bold text-color-text-primary">
     {skill.level}
   </div>
 </div>

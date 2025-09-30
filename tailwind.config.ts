@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         header: ['var(--font-header)', ...defaultTheme.fontFamily.sans],
         body: ['var(--font-body)', ...defaultTheme.fontFamily.sans],
+        skills: ['var(--font-skills)', ...defaultTheme.fontFamily.mono],
       },
       typography: {
         DEFAULT: {
