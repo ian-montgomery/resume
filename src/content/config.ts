@@ -52,23 +52,6 @@ export const collections = {
         skills: z.array(reference('skills')).min(1).optional(),
       }),
   }),
-  favorites: defineCollection({
-    type: 'content',
-    schema: ({ image }) =>
-      z.object({
-        title: z.string(),
-        subtitle: z.string().optional(),
-        url: z.string().url(),
-        image: image().or(z.string()).optional(),
-      }),
-  }),
-  interests: defineCollection({
-    type: 'content',
-    schema: z.object({
-      name: z.string(),
-      icon: z.string().optional(),
-    }),
-  }),
   jobs: defineCollection({
     type: 'content',
     schema: ({ image }) =>
@@ -108,19 +91,6 @@ export const collections = {
         endDate: z.date().optional(),
         details: z.array(labelledValueSchema).min(1).optional(),
         skills: z.array(reference('skills')).min(1).optional(),
-      }),
-  }),
-  references: defineCollection({
-    type: 'content',
-    schema: ({ image }) =>
-      z.object({
-        author: z.object({
-          name: z.string(),
-          position: z.string().optional(),
-          relation: z.string().optional(),
-          image: image().or(z.string()).optional(),
-          url: z.string().url().optional(),
-        }),
       }),
   }),
   skills: defineCollection({

@@ -4,11 +4,8 @@ import type { ContentEntryMap } from 'astro:content';
 
 import Achievement from '@/web/components/achievement.astro';
 import Education from '@/web/components/education.astro';
-import Favorite from '@/web/components/favorite.astro';
-import Interest from '@/web/components/interest.astro';
 import Job from '@/web/components/job.astro';
 import Project from '@/web/components/project.astro';
-import Reference from '@/web/components/reference.astro';
 import { Skill } from '@/web/components/skills';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,11 +41,7 @@ type NestedSection<C extends keyof ContentEntryMap, P extends Component> = Secti
 export type TemplateSection =
   | FlatSection<'achievements', typeof Achievement>
   | FlatSection<'education', typeof Education>
-  | FlatSection<'favorites', typeof Education>
-  | NestedSection<'favorites', typeof Favorite>
-  | FlatSection<'interests', typeof Interest>
   | FlatSection<'jobs', typeof Job>
   | FlatSection<'projects', typeof Project>
-  | FlatSection<'references', typeof Reference>
   | FlatSection<'skills', typeof Skill>
   | NestedSection<'skills', typeof Skill>;

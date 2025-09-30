@@ -16,7 +16,7 @@ const props: ComponentProps<typeof MainTemplate> = {
     pdf: {
       path: '/generated/pdf/template.pdf',
       label: 'Download resume',
-      filename: 'mark-freeman-resume.pdf',
+      filename: 'ian-montgomery-resume.pdf',
     },
   },
   metadata: 'main',
@@ -24,11 +24,8 @@ const props: ComponentProps<typeof MainTemplate> = {
     { sectionId: 'basics', icon: 'fa6-solid:user', text: 'About me' },
     { sectionId: 'skills', icon: 'fa6-solid:bars-progress', text: 'Skills' },
     { sectionId: 'jobs', icon: 'fa6-solid:suitcase', text: 'Work experience' },
-    { sectionId: 'projects', icon: 'fa6-solid:rocket', text: 'Projects' },
-    { sectionId: 'references', icon: 'fa6-solid:comment', text: 'References' },
     { sectionId: 'achievements', icon: 'fa6-solid:trophy', text: 'Achievements' },
     { sectionId: 'education', icon: 'fa6-solid:graduation-cap', text: 'Education' },
-    { sectionId: 'favorites', icon: 'fa6-solid:star', text: 'Favorites' },
   ],
   basics: 'main',
   sections: [
@@ -38,98 +35,29 @@ const props: ComponentProps<typeof MainTemplate> = {
       subsections: [
         {
           title: 'Technologies',
-          withLevel: true,
           // prettier-ignore
-          entries: ['astro', 'drizzle-orm', 'eslint', 'next', 'playwright', 'postgresql', 'react-testing-library', 'react', 'shadcn', 'tailwind', 'tanstack-query', 'trpc', 'typescript', 'vitest'],
+          entries: ['typescript', 'javascript', 'go', 'kotlin', 'terraform', 'docker', 'kubernetes', 'html', 'css', 'php'],
         },
         {
-          title: 'Tools',
-          entries: ['neon', 'sentry', 'stripe', 'vercel'],
-        },
-        {
-          title: 'Languages',
-          entries: ['english', 'spanish'],
+          title: 'Cloud & DevOps',
+          entries: ['aws', 'azure', 'github-actions', 'gitlab', 'octopus-deploy', 'datadog'],
         },
       ],
     },
     {
       collection: 'jobs',
       title: 'Work',
-      entries: ['meta', 'shopify', 'codepen'],
-    },
-    {
-      collection: 'projects',
-      title: 'Projects',
-      entries: ['moni-buddy', 'user-board'],
-    },
-    {
-      collection: 'references',
-      title: 'References',
-      entries: ['jane-smith', 'john-doe'],
+      entries: ['xero', 'endgame', 'epi', 'commonsense', 'racine'],
     },
     {
       collection: 'achievements',
       title: 'Achievements',
-      entries: [
-        'advanced-react-developer',
-        'google-developer-expert',
-        'reactathon-hackathon',
-        'redux-toolkit-contributor',
-      ],
+      entries: ['azure-certified-fundamentals'],
     },
     {
       collection: 'education',
       title: 'Education',
-      entries: ['master', 'bachelor'],
-    },
-    {
-      collection: 'favorites',
-      title: 'Favorites',
-      subsections: [
-        {
-          title: 'Books I read',
-          image: 'poster',
-          entries: [
-            'books/domain-driven-design',
-            'books/grokkking-simplicity',
-            'books/learning-javascript-design-patterns',
-            'books/the-pragmatic-programmer',
-          ],
-        },
-        {
-          title: 'Articles I come back to',
-          withSource: true,
-          image: 'favicon',
-          entries: [
-            'articles/client-side-architecture-basics',
-            'articles/future-facing-frontend-architectures',
-            'articles/practical-react-query',
-            'articles/the-least-worst-architecture',
-          ],
-        },
-        {
-          title: 'Videos I watched',
-          image: 'video',
-          entries: ['videos/mind-the-gap', 'videos/monads', 'videos/principled-coders', 'videos/scaling-yourself'],
-        },
-        {
-          title: 'People I learn from',
-          image: 'person',
-          entries: [
-            'people/addy-osmani',
-            'people/anthony-fu',
-            'people/dan-abramov',
-            'people/josh-w-comeau',
-            'people/kent-c-dodds',
-            'people/lee-robinson',
-          ],
-        },
-      ],
-    },
-    {
-      collection: 'interests',
-      title: 'Interests',
-      entries: ['cooking', 'running', 'technical-blogging', 'video-montage'],
+      entries: ['umd', 'dev-academy'],
     },
   ],
 };

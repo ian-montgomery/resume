@@ -11,14 +11,10 @@ import { pickSectionProps } from '@/utils/templates';
 import Achievement from '@/web/components/achievement.astro';
 import { Basics } from '@/web/components/basics';
 import Education from '@/web/components/education.astro';
-import Favorite from '@/web/components/favorite.astro';
-import Interest from '@/web/components/interest.astro';
 import Job from '@/web/components/job.astro';
 import Layout from '@/web/components/layout.astro';
 import { Metadata } from '@/web/components/metadata';
-import Project from '@/web/components/project.astro';
-import Reference from '@/web/components/reference.astro';
-import { Section, SectionTitle, Subsection, SubsectionTitle } from '@/web/components/section';
+import { Section, SectionTitle, Subsection } from '@/web/components/section';
 import { Sidebar, SidebarItem } from '@/web/components/sidebar';
 import { Skill } from '@/web/components/skills';
 import type { WebContextData } from '@/web/utils/initialize-web-context';
@@ -107,36 +103,6 @@ await initializeWebContext(Astro, {
           </VerticalList>
         )}
 
-        {section.collection === 'favorites' &&
-          ('subsections' in section ? (
-            <VerticalList class="gap-10">
-              {section.subsections.map((subsection) => (
-                <Subsection class="gap-2">
-                  <SubsectionTitle>{subsection.title}</SubsectionTitle>
-                  <GridList class="gap-4 lg:grid-cols-2">
-                    {subsection.entries.map((entry) => (
-                      <Favorite entry={getEntry('favorites', entry)} {...pickSectionProps(subsection)} />
-                    ))}
-                  </GridList>
-                </Subsection>
-              ))}
-            </VerticalList>
-          ) : (
-            <GridList class="gap-4 lg:grid-cols-2">
-              {section.entries.map((entry) => (
-                <Favorite entry={getEntry('favorites', entry)} {...pickSectionProps(section)} />
-              ))}
-            </GridList>
-          ))}
-
-        {section.collection === 'interests' && (
-          <HorizontalList class="gap-x-4 gap-y-3">
-            {section.entries.map((entry) => (
-              <Interest entry={getEntry('interests', entry)} {...pickSectionProps(section)} />
-            ))}
-          </HorizontalList>
-        )}
-
         {section.collection === 'jobs' && (
           <VerticalList class="gap-10">
             {section.entries.map((entry, i, arr) => (
@@ -148,34 +114,11 @@ await initializeWebContext(Astro, {
           </VerticalList>
         )}
 
-        {section.collection === 'projects' && (
-          <VerticalList class="gap-10">
-            {section.entries.map((entry, i, arr) => (
-              <Fragment>
-                <Project entry={getEntry('projects', entry)} {...pickSectionProps(section)} />
-                {i < arr.length - 1 && <Separator />}
-              </Fragment>
-            ))}
-          </VerticalList>
-        )}
-
-        {section.collection === 'references' && (
-          <VerticalList class="gap-10">
-            {section.entries.map((entry, i, arr) => (
-              <Fragment>
-                <Reference entry={getEntry('references', entry)} {...pickSectionProps(section)} />
-                {i < arr.length - 1 && <Separator />}
-              </Fragment>
-            ))}
-          </VerticalList>
-        )}
-
         {section.collection === 'skills' &&
           ('subsections' in section ? (
             <VerticalList class="gap-8">
               {section.subsections.map((subsection) => (
                 <Subsection class="gap-2">
-                  <SubsectionTitle>{subsection.title}</SubsectionTitle>
                   {subsection.withLevel ? (
                     <GridList class="gap-8" minColWidth="200px">
                       {subsection.entries.map((entry) => (
