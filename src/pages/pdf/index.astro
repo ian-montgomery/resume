@@ -48,17 +48,17 @@ await initializePdfContext(Astro, {
     </VerticalList>
   </Section>
   <Section class="gap-3">
-    <SectionTitle>Achievements</SectionTitle>
-    <VerticalList class="gap-2">
-      <Achievement entry={getEntry('achievements', 'azure-certified-fundamentals')} />
-    </VerticalList>
-  </Section>
-  <Section class="gap-3">
     <SectionTitle>Education</SectionTitle>
     <VerticalList class="gap-3">
       <Education entry={getEntry('education', 'umd')} />
       <Separator />
       <Education entry={getEntry('education', 'dev-academy')} />
+    </VerticalList>
+  </Section>
+  <Section class="gap-3">
+    <SectionTitle>Achievements</SectionTitle>
+    <VerticalList class="gap-2">
+      <Achievement entry={getEntry('achievements', 'azure-certified-fundamentals')} />
     </VerticalList>
   </Section>
   <Footer>
