@@ -1,16 +1,16 @@
 {
-  "name": "zenith",
+  "name": "resume",
   "version": "0.0.1",
   "private": true,
-  "description": "Template for creating a comprehensive virtual resume for developers.",
-  "homepage": "https://github.com/KonradSzwarc/zenith#readme",
-  "bugs": "https://github.com/KonradSzwarc/zenith/issues",
+  "description": "Ian Montgomery's comprehensive virtual resume.",
+  "homepage": "https://github.com/ian-montgomery/resume#readme",
+  "bugs": "https://github.com/ian-montgomery/resume/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KonradSzwarc/zenith.git"
+    "url": "https://github.com/ian-montgomery/resume.git"
   },
   "license": "MIT",
-  "author": "Konrad Szwarc <konrad.szwarc.dev@gmail.com> (https://github.com/KonradSzwarc)",
+  "author": "Ian Montgomery <ian.montgomery.nz@gmail.com> (https://github.com/ian-montgomery)",
   "type": "module",
   "engines": {
     "node": "22.x",
