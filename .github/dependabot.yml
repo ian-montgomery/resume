@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+      timezone: 'Pacific/Auckland'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'deps'
+      prefix-development: 'deps-dev'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'automated'
+    # Group minor and patch updates together
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+    # Ignore major version updates for now (can be enabled later)
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - 'version-update:semver-major'
